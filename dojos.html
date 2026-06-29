@@ -8,7 +8,7 @@
 <link rel="icon" href="assets/images/favicon.png" sizes="any">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,20 +24,24 @@
         <li><a href="dojos.html" class="active">Dojos</a></li>
         <li><a href="updates.html">Updates</a></li>
       </ul>
-      <div class="nav-social">
-        <a href="#" aria-label="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-        <a href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.738-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
-      </div>
+      <a class="wa-btn" href="https://wa.me/" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.18z"/></svg></span>
+        <span class="label">Whatsapp</span>
+      </a>
       <button class="nav-toggle" aria-label="Menu"><svg viewBox="0 0 24 24"><path d="M3 6h18v2H3zM3 11h18v2H3zM3 16h18v2H3z"/></svg></button>
     </nav>
   </div>
 </header>
 
-<section class="page-hero">
+<!-- BANNER HERO -->
+<section class="dojos-hero">
+  <div class="bg"><img src="assets/images/dojos-banner.jpg" alt="JKA Indonesia dojo network"></div>
   <div class="container">
-    <span class="eyebrow">Our Dojo Network</span>
-    <h1>One Spirit. Many Dojos. One Standard.</h1>
-    <p>Discover official JKA Indonesia dojos across the nation, united by the same discipline, values, and authentic Shotokan standards.</p>
+    <div class="inner">
+      <h1>Our Dojo Network</h1>
+      <div class="tagline">One Spirit. Many Dojos. One Standard of Excellence.</div>
+      <p>Discover official JKA Indonesia dojos across the nation, united by the same discipline, values, and authentic Shotokan standards.</p>
+    </div>
   </div>
 </section>
 
@@ -53,151 +57,118 @@
     </div>
 
     <!-- Jakarta -->
-    <div class="dojo-group grid cols-3 active" data-region="jakarta">
-      <div class="dojo-card">
+    <div class="dojo-group active" data-region="jakarta">
+      <div class="dcard red">
         <h3>JKAI Honbu (001)</h3>
-        <p class="addr">GOR Bulungan, Jl. Bulungan No.1, Kota Jakarta Selatan, DKI Jakarta 12130, Indonesia</p>
-        <div class="meta">
-          <span class="label">Representative</span>
-          <p class="rep">Suyana Sensei</p>
-          <span class="label">Schedule</span>
-          <p class="sched"><span>Saturday : 08:00–10:00</span><span>Tuesday : 09:00–11:00</span></p>
-        </div>
+        <p class="addr">GOR Bulungan<br>Jl. Bulungan No.1<br>Kota Jakarta Selatan<br>DKI Jakarta 12130, Indonesia</p>
+        <span class="label">Representative</span>
+        <p class="val">Suyana Sensei</p>
+        <span class="label">Schedule</span>
+        <p class="val">Saturday : 08:00-10:00<br>Tuesday : 09:00-11:00</p>
       </div>
-      <div class="dojo-card">
+      <div class="dcard">
         <h3>JKAI Jati Baru</h3>
-        <p class="addr">Dinas Cipta Karya, Tata Ruang Dan Pertanahan DKI, Jl. Taman Jati Baru No.1, Cideng, Jakarta Pusat</p>
-        <div class="meta">
-          <span class="label">Representative</span>
-          <p class="rep">Kris Darmanto Ebraheem</p>
-          <span class="label">Schedule</span>
-          <p class="sched"><span>Friday : 08:00–10:00</span><span>Sunday : 09:00–11:00</span></p>
-        </div>
+        <p class="addr">Dinas Cipta Karya, Tata Ruang Dan Pertanahan DKI<br>Jl. Taman Jati Baru No.1 Cideng, Jakarta Pusat</p>
+        <span class="label">Representative</span>
+        <p class="val">Kris Darmanto Ebraheem</p>
+        <span class="label">Schedule</span>
+        <p class="val">Friday : 08:00 - 10:00<br>Sunday : 09:00 - 11:00</p>
       </div>
-      <div class="dojo-card">
+      <div class="dcard">
         <h3>JKAI Dobin</h3>
-        <p class="addr">Jl. Mawar No.8 RT 14/RW 6, Pesanggrahan, Kota Jakarta Selatan, DKI Jakarta 12320</p>
-        <div class="meta">
-          <span class="label">Representative</span>
-          <p class="rep">Harnanto / Nori Ansari</p>
-          <span class="label">Schedule</span>
-          <p class="sched"><span>Wednesday : 19:00–21:00</span><span>Thursday : 19:00–21:00</span><span>Sunday : 07:00–09:00</span></p>
-        </div>
+        <p class="addr">Jl. Mawar No.8 RT 14/RW 6, Pesanggrahan, Kota Jakarta Selatan, DKI Jakarta, 12320</p>
+        <span class="label">Representative</span>
+        <p class="val">Harnanto / Nori Ansari</p>
+        <span class="label">Schedule</span>
+        <p class="val">Wednesday : 19:00-21:00<br>Thursday : 19:00-21:00<br>Sunday : 07:00-09:00</p>
       </div>
     </div>
 
     <!-- Banten -->
-    <div class="dojo-group grid cols-3" data-region="banten">
-      <div class="dojo-card">
+    <div class="dojo-group" data-region="banten">
+      <div class="dcard red">
         <h3>JKAI Green Bintaro Indah</h3>
         <p class="addr">Green Bintaro Indah, Jl. Pesantren, Kel. Jurang Mangu Timur, Kec. Pondok Aren, Tangerang Selatan 15422, Banten, Indonesia</p>
-        <div class="meta">
-          <span class="label">Representative</span>
-          <p class="rep">Taufik Hidayat</p>
-          <span class="label">Schedule</span>
-          <p class="sched"><span>Sunday : 06:30–08:30</span></p>
-        </div>
+        <span class="label">Representative</span>
+        <p class="val">Taufik Hidayat</p>
+        <span class="label">Schedule</span>
+        <p class="val">Sunday : 06:30-08:30</p>
       </div>
     </div>
 
     <!-- Jawa Barat -->
-    <div class="dojo-group grid cols-3" data-region="jabar">
-      <div class="dojo-card">
+    <div class="dojo-group" data-region="jabar">
+      <div class="dcard red">
         <h3>JKAI Polsek Bogor Selatan</h3>
         <p class="addr">Bogor Selatan Police Station, Jl. Pahlawan 100, Bogor 16132, Jawa Barat, Indonesia</p>
-        <div class="meta">
-          <span class="label">Representative</span>
-          <p class="rep">Irlandia Dwi Fesyara</p>
-          <span class="label">Schedule</span>
-          <p class="sched"><span>Sunday : 08:00–10:00</span></p>
-        </div>
+        <span class="label">Representative</span>
+        <p class="val">Irlandia Dwi Fesyara</p>
+        <span class="label">Schedule</span>
+        <p class="val">Sunday : 08:00-10:00</p>
       </div>
     </div>
 
     <!-- Jawa Timur -->
-    <div class="dojo-group grid cols-3" data-region="jatim">
-      <div class="dojo-card">
+    <div class="dojo-group" data-region="jatim">
+      <div class="dcard red">
         <h3>JKAI Sakti Sidoarjo</h3>
         <p class="addr">Balai RW Rangkah I, Jl. Rangkah I No.72, RT.003/RW.07, Rangkah, Kec. Tambaksari, Surabaya, Jawa Timur 60135</p>
-        <div class="meta">
-          <span class="label">Representative</span>
-          <p class="rep">Tan Indra</p>
-          <span class="label">Schedule</span>
-          <p class="sched"><span>Sunday : 08:00–12:00</span></p>
-        </div>
+        <span class="label">Representative</span>
+        <p class="val">Tan Indra</p>
+        <span class="label">Schedule</span>
+        <p class="val">Sunday : 08:00 - 12:00</p>
       </div>
     </div>
 
     <!-- Jawa Tengah -->
-    <div class="dojo-group grid cols-3" data-region="jateng">
-      <div class="dojo-card">
+    <div class="dojo-group" data-region="jateng">
+      <div class="dcard red">
         <h3>JKAI Satria Magelang</h3>
         <p class="addr">Jl. Mayjen Bambang Sugeng No.52, Mertoyudan, Kabupaten Magelang</p>
-        <div class="meta">
-          <span class="label">Representative</span>
-          <p class="rep">Eko Karyanto</p>
-          <span class="label">Schedule</span>
-          <p class="sched"><span>Thursday : 15:00–17:00</span><span>Saturday : 15:00–17:00</span></p>
-        </div>
+        <span class="label">Representative</span>
+        <p class="val">Eko Karyanto</p>
+        <span class="label">Schedule</span>
+        <p class="val">Thursday : 15:00 - 17:00<br>Saturday : 15:00 - 17:00</p>
       </div>
     </div>
 
     <!-- Lampung -->
-    <div class="dojo-group grid cols-3" data-region="lampung">
-      <div class="dojo-card">
+    <div class="dojo-group" data-region="lampung">
+      <div class="dcard red">
         <h3>JKAI Budo Karate Professional</h3>
         <p class="addr">Dsn 5, RT.16/RW.5, Kel. Purwodadi, Kec. Trimurjo, Kabupaten Lampung Tengah, Lampung</p>
-        <div class="meta">
-          <span class="label">Representative</span>
-          <p class="rep">Ramli Saragih, SE</p>
-          <span class="label">Schedule</span>
-          <p class="sched"><span>Saturday : 16:00–17:30</span></p>
-        </div>
+        <span class="label">Representative</span>
+        <p class="val">Ramli Saragih, SE</p>
+        <span class="label">Schedule</span>
+        <p class="val">Saturday : 16:00 - 17:30</p>
       </div>
     </div>
-  </div>
-</section>
 
-<section class="section dark">
-  <div class="container">
-    <div class="prose">
-      <p style="color:rgba(255,255,255,.85);font-size:1.15rem;text-align:center">JKA Indonesia's dojo network represents the heart of our community — where tradition is practiced, character is shaped, and excellence is forged through consistent training.</p>
-      <p style="color:rgba(255,255,255,.7);text-align:center">Each official JKA dojo across Indonesia follows the standardized curriculum from JKA Headquarters in Japan, ensuring the same level of quality, discipline, and authenticity wherever you train. From beginners taking their first stance to advanced karateka refining their mastery, every dojo is a place to grow, connect, and uphold the true spirit of Karate-Do.</p>
+    <div class="dojos-note">
+      <p>JKA Indonesia's dojo network represents the heart of our community—where tradition is practiced, character is shaped, and excellence is forged through consistent training. Each official JKA dojo across Indonesia follows the standardized curriculum from JKA Headquarters in Japan, ensuring the same level of quality, discipline, and authenticity wherever you train.</p>
+      <p>From beginners taking their first stance to advanced karateka refining their mastery, every dojo is a place to grow, connect, and uphold the true spirit of Karate-Do.</p>
     </div>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="container">
-    <div class="footer-grid">
+    <div class="footer-top">
+      <div><img class="flogo" src="assets/images/logo.png" alt="JKA Indonesia"></div>
       <div>
-        <img class="flogo" src="assets/images/logo.png" alt="JKA Indonesia">
-        <p>Japan Karate Association Indonesia — preserving the true spirit of authentic Shotokan Karate across the nation.</p>
-        <div class="fsocial">
-          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.94c-3.14 0-3.51.01-4.75.07-.9.04-1.39.19-1.71.32-.43.17-.74.37-1.06.69-.32.32-.52.63-.69 1.06-.13.32-.28.81-.32 1.71-.06 1.24-.07 1.61-.07 4.75s.01 3.51.07 4.75c.04.9.19 1.39.32 1.71.17.43.37.74.69 1.06.32.32.63.52 1.06.69.32.13.81.28 1.71.32 1.24.06 1.61.07 4.75.07s3.51-.01 4.75-.07c.9-.04 1.39-.19 1.71-.32.43-.17.74-.37 1.06-.69.32-.32.52-.63.69-1.06.13-.32.28-.81.32-1.71.06-1.24.07-1.61.07-4.75s-.01-3.51-.07-4.75c-.04-.9-.19-1.39-.32-1.71a2.85 2.85 0 00-.69-1.06 2.85 2.85 0 00-1.06-.69c-.32-.13-.81-.28-1.71-.32-1.24-.06-1.61-.07-4.75-.07zm0 3.3a4.6 4.6 0 110 9.2 4.6 4.6 0 010-9.2zm0 7.58a2.98 2.98 0 100-5.96 2.98 2.98 0 000 5.96zm5.86-7.8a1.07 1.07 0 11-2.15 0 1.07 1.07 0 012.15 0z"/></svg></a>
-        </div>
+        <h4>Main Dojo Address</h4>
+        <address>GOR Jakarta Selatan Jln. Bulungan No. 1 Kramat Pela, Kebayoran Baru Jakarta Selatan, DKI Jakarta 12130 Indonesia</address>
       </div>
       <div>
-        <h4>Main Dojo</h4>
-        <address>GOR Jakarta Selatan<br>Jln. Bulungan No. 1<br>Kramat Pela, Kebayoran Baru<br>Jakarta Selatan, DKI Jakarta 12130<br>Indonesia</address>
-      </div>
-      <div>
-        <h4>Secretariat</h4>
-        <address>Komplek Golden Plaza Blok C12<br>Jl. RS Fatmawati No. 15<br>Jakarta Selatan, DKI Jakarta 12420<br>Indonesia</address>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <address>
-          <a href="dojokun.html">Dojokun</a><br>
-          <a href="about.html">About</a><br>
-          <a href="dojos.html">Dojos</a><br>
-          <a href="updates.html">Updates</a>
-        </address>
+        <h4>Secretariat Address</h4>
+        <address>Komplek Golden Plaza Blok C12 Jl. RS Fatmawati No. 15 Jakarta Selatan, DKI Jakarta 12420 Indonesia</address>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>Copyright © 2025 All Rights Reserved, JKA Indonesia.</span>
-      <span>Made with care by Omeoo Creative</span>
+      <span>Copyright © 2025 All Rights Reserved, JKA Indonesia. Made with Love by Omeoo Creative</span>
+      <span class="follow">Follow us
+        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 3.3a4.6 4.6 0 100 9.2 4.6 4.6 0 000-9.2zm0 7.58a2.98 2.98 0 110-5.96 2.98 2.98 0 010 5.96zm5.86-7.8a1.07 1.07 0 11-2.15 0 1.07 1.07 0 012.15 0z"/></svg></a>
+      </span>
     </div>
   </div>
 </footer>
