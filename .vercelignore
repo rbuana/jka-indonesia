@@ -1,3 +1,4 @@
-scratch_shots
 node_modules
+.data
+scratch_shots
 .vercel

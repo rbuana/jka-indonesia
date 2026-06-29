@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Members — JKA Indonesia Admin</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="../assets/images/favicon.png" sizes="any">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="inner">
+    <div class="left">
+      <img src="../assets/images/logo.png" alt="JKA Indonesia">
+      <span class="label">Members Admin</span>
+    </div>
+    <div class="right">
+      <span class="who">Signed in as <b id="whoName">…</b></span>
+      <button class="btn ghost sm" id="adminsBtn">Admins</button>
+      <button class="btn ghost sm" id="logoutBtn">Log out</button>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="page-title">
+    <div>
+      <h1>Membership</h1>
+      <p>Manage members, membership status and payments.</p>
+    </div>
+    <button class="btn" id="addBtn">+ Add Member</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat total"><div class="k"><span class="dot total"></span>Total Members</div><div class="v" id="stTotal">–</div></div>
+    <div class="stat"><div class="k"><span class="dot active"></span>Active</div><div class="v" id="stActive">–</div></div>
+    <div class="stat"><div class="k"><span class="dot inactive"></span>Inactive</div><div class="v" id="stInactive">–</div></div>
+    <div class="stat"><div class="k"><span class="dot out"></span>Outstanding</div><div class="v" id="stOut">–</div></div>
+  </div>
+
+  <!-- Toolbar -->
+  <div class="toolbar">
+    <div class="search">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 10-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1114 9.5 4.5 4.5 0 019.5 14z"/></svg>
+      <input type="search" id="search" placeholder="Search name, email or phone…">
+    </div>
+    <select id="fStatus"><option value="all">All status</option><option value="active">Active</option><option value="inactive">Inactive</option></select>
+    <select id="fPayment"><option value="all">All payments</option><option value="paid">Paid</option><option value="outstanding">Outstanding</option></select>
+    <select id="fDojo"><option value="all">All dojos</option></select>
+  </div>
+
+  <!-- Table -->
+  <div class="table-card">
+    <table>
+      <thead><tr>
+        <th>Member</th><th>Dojo</th><th>Rank</th><th>Membership</th><th>Status</th><th>Payment</th><th>Expiry</th><th></th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty hidden" id="empty">No members match your filters.</div>
+    <div class="count-note" id="countNote"></div>
+  </div>
+</div>
+
+<!-- Member modal -->
+<div class="modal-bg" id="memberModal">
+  <form class="modal" id="memberForm">
+    <header><h2 id="mTitle">Add Member</h2><button type="button" class="x" data-close>&times;</button></header>
+    <div class="body">
+      <div class="msg error hidden" id="mErr"></div>
+      <div class="grid2">
+        <div class="field"><label>Full name *</label><input id="m_full_name" required></div>
+        <div class="field"><label>Email</label><input id="m_email" type="email"></div>
+        <div class="field"><label>Phone</label><input id="m_phone"></div>
+        <div class="field"><label>Dojo</label>
+          <select id="m_dojo">
+            <option value="">—</option>
+            <option>JKAI Honbu (001)</option><option>JKAI Jati Baru</option><option>JKAI Dobin</option>
+            <option>JKAI Green Bintaro Indah</option><option>JKAI Polsek Bogor Selatan</option>
+            <option>JKAI Sakti Sidoarjo</option><option>JKAI Satria Magelang</option><option>JKAI Budo Karate Professional</option>
+          </select>
+        </div>
+        <div class="field"><label>Rank / Belt</label><input id="m_rank" placeholder="e.g. 1st Dan, 5th Kyu"></div>
+        <div class="field"><label>Membership type</label>
+          <select id="m_membership_type"><option value="">—</option><option>Monthly</option><option>Annual</option><option>Lifetime</option></select>
+        </div>
+        <div class="field"><label>Status</label>
+          <select id="m_status"><option value="active">Active</option><option value="inactive">Inactive</option></select>
+        </div>
+        <div class="field"><label>Payment</label>
+          <select id="m_payment_status"><option value="paid">Paid</option><option value="outstanding">Outstanding</option></select>
+        </div>
+        <div class="field"><label>Join date</label><input id="m_join_date" type="date"></div>
+        <div class="field"><label>Expiry date</label><input id="m_expiry_date" type="date"></div>
+      </div>
+      <div class="field"><label>Notes</label><textarea id="m_notes" rows="2"></textarea></div>
+    </div>
+    <footer>
+      <button type="button" class="btn ghost" data-close>Cancel</button>
+      <button type="submit" class="btn" id="mSave">Save Member</button>
+    </footer>
+  </form>
+</div>
+
+<!-- Admins modal -->
+<div class="modal-bg" id="adminsModal">
+  <div class="modal">
+    <header><h2>Admin Accounts</h2><button type="button" class="x" data-close-admins>&times;</button></header>
+    <div class="body">
+      <ul class="admin-list" id="adminList"></ul>
+      <h3 style="font-size:1rem;margin-bottom:10px">Add an admin</h3>
+      <div class="msg error hidden" id="aErr"></div>
+      <div class="msg ok hidden" id="aOk"></div>
+      <form id="adminForm">
+        <div class="grid2">
+          <div class="field"><label>Name *</label><input id="a_name" required></div>
+          <div class="field"><label>Email *</label><input id="a_email" type="email" required></div>
+        </div>
+        <div class="field"><label>Password * (min 6 chars)</label><input id="a_password" type="password" required></div>
+        <button class="btn" type="submit">Add Admin</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="admin.js"></script>
+</body>
+</html>
